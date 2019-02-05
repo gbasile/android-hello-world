@@ -5,7 +5,7 @@ import android.arch.lifecycle.ViewModel
 import android.os.CountDownTimer
 
 private const val INITIAL_SCORE = 0
-private const val GAME_DURATION: Long = 50000
+private const val GAME_DURATION: Long = 5000
 private const val GAME_COUNTDOWN_INTERVAL: Long = 1000
 
 class GameViewModel: ViewModel() {

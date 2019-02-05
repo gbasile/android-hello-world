@@ -19,13 +19,13 @@ class MainActivity : AppCompatActivity() {
             model.incrementScore()
         }
 
-        model.timeLeft.observe(this, NotNullObserver<Long> { timeLeft ->
+        model.timeLeft.observeNonNull(this) { timeLeft ->
             time_left_text.text = getString(R.string.time_left, timeLeft / 1000)
-        })
+        }
 
-        model.score.observe(this, NotNullObserver<Int> { score ->
+        model.score.observeNonNull(this) { score ->
             score_text.text = getString(R.string.current_score, score)
-        })
+        }
     }
 
     override fun onStart() {

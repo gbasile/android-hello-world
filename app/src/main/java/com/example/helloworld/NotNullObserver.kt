@@ -1,9 +1,8 @@
 package com.example.helloworld
 
+import android.arch.lifecycle.LifecycleOwner
+import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.Observer
 
-class NotNullObserver<T>(private val onUnwrappedChange: (T) -> Unit): Observer<T> {
-    override fun onChanged(t: T?) {
-        t?.apply { onUnwrappedChange(this) }
-    }
-}
+fun <T> LiveData<T>.observeNonNull(lifecycleOwner: LifecycleOwner, observer: (T) -> Unit) =
+    observe(lifecycleOwner, Observer { it?.let(observer) })
