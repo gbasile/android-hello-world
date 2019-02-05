@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Perre</string>
+    <string name="action_settings">Settings</string>
+    <string name="main_label">Hello Perres!</string>
+    <string name="current_score">Score is %d</string>
+    <string name="tap_button">Tap me!</string>
+    <string name="time_left">Time left: %d</string>
+</resources>
