@@ -11,6 +11,8 @@ private const val GAME_COUNTDOWN_INTERVAL: Long = 1000
 class GameViewModel: ViewModel() {
     val score = MutableLiveData<Int>()
     val timeLeft = MutableLiveData<Long>()
+    val finalScore = MutableLiveData<Int>()
+
     private var isGameOn = false
 
     private val countDownTimer: CountDownTimer = object : CountDownTimer(GAME_DURATION, GAME_COUNTDOWN_INTERVAL) {
@@ -19,6 +21,7 @@ class GameViewModel: ViewModel() {
         }
 
         override fun onFinish() {
+            finalScore.value = score.value
             isGameOn = false
         }
     }
